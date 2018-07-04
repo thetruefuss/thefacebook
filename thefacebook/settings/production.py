@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 import os
 
-from django.contrib.messages import constants as messages
-
 import dj_database_url
 from decouple import Csv, config
 
@@ -46,11 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'widget_tweaks',
-    'pinax.messages',
-
     'accounts.apps.AccountsConfig',
-    'books.apps.BooksConfig',
     'core.apps.CoreConfig',
 ]
 
@@ -91,12 +85,10 @@ WSGI_APPLICATION = 'thefacebook.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        default = config('DATABASE_URL')
+    )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -144,8 +136,6 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-ALLOWED_SIGNUP_DOMAINS = ['*']
-
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 SERVER_EMAIL = config('SERVER_EMAIL')
@@ -154,3 +144,5 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_BACKEND = config('EMAIL_BACKEND')
+
+ALLOWED_SIGNUP_DOMAINS = ['*']
