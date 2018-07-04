@@ -6,7 +6,13 @@ As shown in The Social Network movie built with Python using the Django Web Fram
 
 Check the website at [http://thefacebook.pythonanywhere.com](http://thefacebook.pythonanywhere.com/)
 
+**Welcome Page**
+
 ![Thefacebook Screenshot](https://image.ibb.co/dGtsHJ/thefacebook_screenshot.jpg "Thefacebook Screenshot")
+
+**Profile Page**
+
+![Thefacebook Profile Screenshot](https://image.ibb.co/jpnoPy/thefacebook_profile_screenshot.jpg "Thefacebook Profile Screenshot")
 
 ### Installation Guide
 
