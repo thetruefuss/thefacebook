@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Welcome to Thefacebook!</p>
+  </div>
+  <div class="mainbox-content-heading">
+    <h2>[ Welcome to Thefacebook ]</h2>
+  </div>
+  <div class="mainbox-body">
+    <div class="cool-a">
+      <p>Thefacebook is an online directory that connets people through social networks at colleges.</p>
+      <p>We have opened up Thefacebook for popular consumption at <b>Harvard University</b>.</p>
+      <p>You can use Thefacebook to:</p>
+      <ul>
+        <li>Search for people at your school</li>
+        <li>Find out who are in your class</li>
+        <li>Look up your friend's friends</li>
+        <li>See a visualization of your social network</li>
+      </ul>
+      <p>To get started, click below to register. If you have already registered, you can log in.</p>
+    </div>
+    <div class="cool-b">
+      <button type="button" name="register">
+        <a href="{% url 'register' %}" class="btn-link">Register</a>
+      </button>
+      <button type="button" name="login">
+        <a href="{% url 'login' %}" class="btn-link">Login</a>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

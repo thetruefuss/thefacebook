@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Profile {% if user == request.user %}(This is you){% else %}({{ user.name }}){% endif %}</p>
+  </div>
+  <div class="mainbox-body">
+    <div class="leftside">
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>
+            Picture
+            {% if user == request.user %}
+              <a href="{% url 'edit_picture' %}" style="float:right;color:white;text-decoration:none;">[ edit ]</a>
+            {% endif %}
+          </p>
+
+        </div>
+        <div class="minibox-body">
+          <div class="profilepic">
+            <img src="{{ profile.get_picture }}" alt="Profile Picture" id="profilepic">
+          </div>
+        </div>
+      </div>
+      <div class="profile-links">
+        {% if user == request.user %}
+        <ul>
+          <li><a href="#">Visualize My Friends</a></li>
+          <li><a href="{% url 'edit_info' %}">Edit My Profile</a></li>
+          <li><a href="#">My Account Preferences</a></li>
+          <li><a href="#">My Privacy Preferences</a></li>
+        </ul>
+        {% else %}
+        <ul>
+          <li><a href="#">Add Friend</a></li>
+          <li><a href="#">Poke Now!</a></li>
+        </ul>
+        {% endif %}
+      </div>
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>Connection</p>
+        </div>
+        <div class="minibox-body">
+          <p>
+            {% if user == request.user %}
+            This is you.
+            {% else %}
+            Just another user on this network.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      {% if user == request.user %}
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>Friends</p>
+        </div>
+        <div class="minibox-body">
+          <p>
+            You have {{ friends_count }} friends on Thefacebook.
+          </p>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+    <div class="rightside">
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>
+            Information
+            {% if user == request.user %}
+            <a href="{% url 'edit_info' %}" style="float:right;color:white;text-decoration:none;">[ edit ]</a>
+            {% endif %}
+          </p>
+        </div>
+        <div class="minibox-body">
+          <div class="info-heading"><b>Account Info:</b></div>
+          <div class="left-labels">
+            <span>Name:</span><br>
+            <span>Member Since:</span><br>
+            <span>Last Updated:</span><br>
+          </div>
+          <div class="right-assertions">
+            <span>{% if user.get_full_name %}{{ user.get_full_name }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if user.member_since %}{{ user.member_since }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if profile.updated %}{{ profile.updated }}{% else %}.....................................{% endif %}</span><br>
+          </div>
+          <br>
+          <div class="info-heading"><b>Basic Info:</b></div>
+          <div class="left-labels">
+            <span>Email:</span><br>
+            <span>Status:</span><br>
+            <span>Sex:</span><br>
+            <span>Birthday:</span><br>
+            <span>Concentration:</span><br>
+            <span>Phone:</span><br>
+            <span>High School:</span><br>
+          </div>
+          <div class="right-assertions">
+            <span style="color:#337eff;">{{ user.email }}</span><br>
+            <span>{% if user.status %}{{ user.get_status_display }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if not profile.sex == "empty" %}{{ profile.get_sex_display }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if profile.dob %}{{ profile.dob }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if profile.concentration %}{{ profile.concentration }}{% else %}.....................................{% endif %}</span><br>
+            <span style="color:#337eff;">{% if profile.phone_number %}{{ profile.phone_number }}{% else %}.....................................{% endif %}</span><br>
+            <span style="color:#337eff;">{% if profile.high_school %}{{ profile.high_school }}{% else %}.....................................{% endif %}</span><br>
+          </div>
+
+          <br>
+          <div class="info-heading"><b>Extented Info:</b></div>
+          <div class="left-labels">
+            <span>Screen Name:</span><br>
+            <span>Political Views:</span><br>
+            <span>Interest:</span><br>
+            <span>Relationship Status:</span><br>
+          </div>
+          <div class="right-assertions">
+            <span>{% if profile.screen_name %}{{ profile.screen_name }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if profile.political_views %}{{ profile.political_views }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if profile.interests %}{{ profile.interests }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if not profile.relationship_status == "empty" %}{{ profile.get_relationship_status_display }}{% else %}.....................................{% endif %}</span><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

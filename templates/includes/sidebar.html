@@ -1,0 +1,38 @@
+{% if request.user.is_authenticated %}
+<div class="sidebar">
+  <div class="search-area">
+    <form method="get" action="{% url 'search' %}">
+      <input type="text" name="q">
+      <span>quick search</span>
+      <button type="submit">go</button>
+    </form>
+  </div>
+  <div class="space"></div>
+  <div class="sidebar-links">
+    <div>
+      <a href="{% url 'profile' %}" style="float:left;margin-right:10px;">My Profile</a>
+      <a href="{% url 'edit_info' %}"> [ edit ]</a>
+    </div>
+    <a href="#">My Friends</a>
+    <a href="#">My Groups</a>
+    <a href="#">My Messages</a>
+    <a href="#">My Account</a>
+    <a href="#">My Privacy</a>
+  </div>
+</div>
+{% else %}
+<div class="sidebar">
+  <div class="login-area">
+    <form method="post" action="{% url 'login' %}">{% csrf_token %}
+      <label for="email">Email:</label>
+      <input type="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" name="password" required>
+      <button type="button" name="register">
+        <a href="{% url 'register' %}" class="btn-link">register</a>
+      </button><br>
+      <button type="submit" name="login">login</button>
+    </form>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Welcome to Thefacebook!</p>
+  </div>
+  <div class="mainbox-content-heading">
+    <h2>[ About Thefacebook ]</h2>
+  </div>
+  <div class="minibox">
+    <div class="minibox-heading">
+      <p>The Project</p>
+    </div>
+    <div class="minibox-body">
+      <p>Thefacebook is an online directory that connets people through social networks at colleges.</p>
+    </div>
+  </div>
+  <div class="minibox">
+    <div class="minibox-heading">
+      <p>The People</p>
+    </div>
+    <div class="minibox-body">
+      <div class="cool-a">
+        <ul>
+          <li><b>Mark Zuckerberg</b></li>
+          <li><b>Eduardo Saverin</b></li>
+        </ul>
+      </div>
+      <div class="cool-b">
+        <ul>
+          <li>Founder &amp; CEO</li>
+          <li>Co-founder &amp; CFO</li>
+        </ul>
+      </div>
+    </div>
+</div>
+</div>
+{% endblock %}

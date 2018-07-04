@@ -1,0 +1,25 @@
+{% if request.user.is_authenticated %}
+<header class="header-wrapper">
+  <div class="top-nav">
+    <ul>
+      <li><a href="{% url 'home' %}">home</a></li>
+      <li><a href="#">search</a></li>
+      <li><a href="#">global</a></li>
+      <li><a href="#">social net</a></li>
+      <li><a href="#">invite</a></li>
+      <li><a href="{% url 'faq' %}">faq</a></li>
+      <li><a href="{% url 'logout' %}">logout</a></li>
+    </ul>
+  </div>
+</header>
+{% else %}
+<header class="header-wrapper">
+  <div class="top-nav">
+    <ul>
+      <li><a href="{% url 'login' %}">login</a></li>
+      <li><a href="{% url 'register' %}">register</a></li>
+      <li><a href="{% url 'about' %}">about</a></li>
+    </ul>
+  </div>
+</header>
+{% endif %}

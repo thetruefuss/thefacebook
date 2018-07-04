@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Contact Us</p>
+  </div>
+  <div class="mainbox-content-heading">
+    <h2>[ Contact Us ]</h2>
+  </div>
+  <div class="minibox">
+    <div class="minibox-heading">
+      <p>Email</p>
+    </div>
+    <div class="minibox-body">
+      <div class="cool-a">
+        <ul>
+          <li><b>Information/Support:</b></li>
+          <li><b>Suggestions/Requests:</b></li>
+          <li><b>Business Development:</b></li>
+          <li><b>Press Inquiries:</b></li>
+          <li><b>Advertising:</b></li>
+        </ul>
+      </div>
+      <div class="cool-b">
+        <ul>
+          <li>info@thefacebook.com</li>
+          <li>suggest@thefacebook.com</li>
+          <li>business@thefacebook.com</li>
+          <li>press@thefacebook.com</li>
+          <li>advertise@thefacebook.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="hba">
+    <button type="button" name="button">
+      <a href="{% url 'home' %}" class="btn-link">Home</a>
+    </button>
+  </div>
+</div>
+{% endblock %}

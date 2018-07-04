@@ -1,0 +1,61 @@
+/* REVIEW: Main content */
+.mainbox {
+  /* REVIEW: total width is 718px */
+  width: 708px;
+  margin: 2px;
+  border: 1px solid #3b5998;
+  float: right;
+  font-size: 16px;
+  padding-bottom: 40px;
+}
+.mainbox-heading {
+  margin: 0;
+  padding: 2px;
+  background-color: #3b5998;
+  color: white;
+}
+.mainbox-heading p {
+  margin: 0;
+}
+.mainbox-content-heading {
+  text-align: center;
+}
+
+.userbox {
+  /* REVIEW: total width is 718px */
+  width: 600px;
+  margin: auto;
+  border: 1px solid #3b5998;
+  font-size: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.userbox-heading {
+  margin: 0;
+  padding: 2px;
+  background-color: #3b5998;
+  color: white;
+}
+.userbox-heading p {
+  margin: 0;
+}
+.userbox-body {
+  padding: 0px;
+}
+.userbox-body img {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  float: left;
+}
+.userbox-right {
+  float: right;
+  text-align: left;
+  width: 85%;
+  margin-top: 10px;
+}
+a {
+  color: #337eff;
+  text-decoration: none;
+  font-size: 14px;
+}

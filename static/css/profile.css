@@ -1,0 +1,110 @@
+/* REVIEW: Main content */
+.mainbox {
+  /* REVIEW: total width is 718px */
+  width: 708px;
+  margin: 2px;
+  border: 1px solid #3b5998;
+  float: right;
+  font-size: 16px;
+}
+.mainbox-heading {
+  margin: 0;
+  padding: 2px;
+  background-color: #3b5998;
+  color: white;
+}
+.mainbox-heading p {
+  margin: 0;
+}
+.mainbox-body {
+  margin: 0;
+  padding: 20px;
+}
+.leftside {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+}
+.rightside {
+  float: right;
+  width: 400px;
+  margin: 0;
+  padding: 0;
+}
+.minibox {
+  border: 1px solid #3b5998;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.minibox-heading {
+  margin: 0;
+  padding: 2px;
+  background-color: #3b5998;
+  color: white;
+}
+.minibox-heading p {
+  margin: 0;
+}
+.minibox-body {
+  margin: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+img#profilepic {
+  width: 200px;
+  position: relative;
+}
+.profile-links {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.profile-links ul {
+  margin: 0;
+  padding: 0;
+}
+.profile-links ul li {
+  padding: 2px 4px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  list-style-type: none;
+}
+.profile-links ul li:first-child {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  list-style-type: none;
+  padding: 2px 4px;
+}
+.profile-links ul li a {
+  color: #337eff;
+  text-decoration: none;
+}
+.info-heading {
+  clear: both;
+  text-align: left;
+  padding: 5px 0px;
+}
+.left-labels {
+  text-align: left;
+  float: left;
+  width: 150px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.right-assertions {
+  text-align: left;
+  float: right;
+  width: 200px;
+  margin: 0px;
+  padding: 0px;
+}
+.left-labels span, .right-assertions span {
+  display: inline-block;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

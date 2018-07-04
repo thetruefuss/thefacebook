@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Welcome {{ request.user.name }}!</p>
+  </div>
+  <div class="mainbox-content-heading">
+    <h2>[ Welcome {{ request.user.name }} ]</h2>
+  </div>
+  <div class="mainbox-body">
+    <div class="minibox">
+      <div class="minibox-heading">
+        <p>Friend Requests</p>
+      </div>
+      <div class="minibox-body">
+        <p>{% if friend_requests == 0 %}You have received <b>No</b> friend requests.{% else %}You have received <b>{{ friend_requests }}</b> friend requests.{% endif %}</p>
+      </div>
+    </div>
+    <div class="minibox">
+      <div class="minibox-heading">
+        <p>Pokes</p>
+      </div>
+      <div class="minibox-body">
+        <p>{% if pokes == 0 %}You have received <b>No</b> pokes.{% else %}You have received<b>{{ pokes }}</b> pokes.{% endif %}</p>
+      </div>
+    </div>
+    <div class="minibox">
+      <div class="minibox-heading">
+        <p>Your Friends</p>
+      </div>
+      <div class="minibox-body">
+        <p>{% if friends == 0 %}You don't have any friends right now.{% else %}You have <b>{{ friends }}</b> friends.{% endif %}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

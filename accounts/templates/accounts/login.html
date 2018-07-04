@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Login to Thefacebook</p>
+  </div>
+  <div class="mainbox-content-heading">
+    <h2>[ Login ]</h2>
+  </div>
+  <div class="mainbox-body">
+    <div class="minibox">
+      <form method="post" action="{% url 'login' %}">{% csrf_token %}
+        <div class="cool-a">
+          <p>Email:</p>
+          <p>Password:</p>
+        </div>
+        <div class="cool-b">
+          <input type="email" name="email"><br>
+          <input type="password" name="password"><br>
+        </div>
+        <div class="cool-c">
+          <button type="submit" name="register">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

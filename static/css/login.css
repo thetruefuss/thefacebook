@@ -1,0 +1,58 @@
+/* REVIEW: Main content */
+.mainbox {
+  /* REVIEW: total width is 718px */
+  width: 708px;
+  margin: 2px;
+  border: 1px solid #3b5998;
+  float: right;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.mainbox-heading {
+  margin: 0;
+  padding: 2px;
+  background-color: #3b5998;
+  color: white;
+}
+.mainbox-heading p {
+  margin: 0;
+}
+.mainbox-content-heading {
+  text-align: center;
+}
+
+.mainbox-body {
+  padding: 0px 30px;
+}
+.minibox {
+  width: 600px;
+  margin: auto;
+  font-size: 16px;
+  overflow: hidden;
+}
+.cool-a {
+  width: 100px;
+  margin-left: 150px;
+  float: left;
+}
+.cool-a p {
+  margin: 0px;
+  line-height: 26px;
+}
+.cool-b {
+  width: 210px;
+  margin-right: 100px;
+  float: right;
+}
+
+.cool-b input {
+  border: 1px solid grey;
+  background: #d9dfea;
+  padding: 2px;
+  margin: 2px 0px;
+}
+.cool-c {
+  padding-top: 20px;
+  clear: both;
+  text-align: center;
+}

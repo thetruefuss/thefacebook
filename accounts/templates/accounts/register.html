@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Registration</p>
+  </div>
+  <div class="mainbox-content-heading">
+    <h2>[ Register ]</h2>
+  </div>
+  <div class="mainbox-body">
+    <p>To register for thefacebook.com, just fill in the four fields below. You will have a chance to enter additional informaiton and submit a picture once you have registered.</p>
+
+    {% if form.errors %}
+      <p style="color:red;">User with this email already exists.</p>
+    {% endif %}
+
+    <div class="minibox">
+      <form method="post" action="{% url 'register' %}">{% csrf_token %}
+        <div class="cool-a">
+          <p>Name:</p>
+          <p>Status:</p>
+          <p>Email: (harverd)</p>
+          <p>Password*: (not fas)</p>
+        </div>
+        <div class="cool-b">
+          <input type="text" name="name" required><br>
+          <select name="status" required>
+            <option></option>
+            <option value="student">Student</option>
+            <option value="alumnus">Alumnus/Alumna</option>
+            <option value="faculty">Faculty</option>
+            <option value="staff">Staff</option>
+          </select>
+          <input type="email" name="email" required><br>
+          <input type="password" name="password" required><br>
+        </div>
+        <div class="cool-c">
+          <p id="agreement">
+            <input type="checkbox" name="agreement" checked>
+            I have read and understood the <a href="{% url 'terms' %}" style="color: #337eff; text-decoration:none;">Terms of Use</a>, and I agree to them.<br> * You can choose any password. It does not have to be, and should not be, your FAS password.
+          </p>
+        </div>
+        <div class="cool-d">
+          <button type="submit" name="register">Register Now!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

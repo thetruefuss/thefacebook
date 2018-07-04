@@ -1,0 +1,158 @@
+/* REVIEW: Main container for storing everthing */
+.container {
+  font-family: sans-serif;
+  width: 873px;
+  margin: auto;
+  border: 1px solid #3b5998;
+  padding-bottom: 30px;
+}
+
+/* REVIEW: Header styling */
+.header-wrapper {
+  background-image: url(../img/banner.jpg);
+  height: 88px;
+  width: 873px;
+  margin: 0;
+  border-bottom: 1px solid #3b5998;
+}
+/* REVIEW: Top navbar styling */
+.top-nav {
+  position: relative;
+  left: 405px;
+  top: 65px;
+  font-size: 14px;
+}
+.top-nav ul {
+  margin: 0;
+}
+.top-nav li {
+  list-style-type: none;
+  display: inline;
+  margin: 0px 5px;
+}
+.top-nav a {
+  color: white;
+  text-decoration: none;
+}
+.top-nav a:hover {
+  color: #528ce3;
+}
+/* REVIEW: SIDEBAR */
+.sidebar {
+  float: left;
+  /* REVIEW: total width is 155px */
+  width: 153px;
+  padding: 2px;
+}
+.login-area {
+  border: 1px solid #3b5998;
+  border-style: dashed;
+  margin: 0;
+  padding: 2px;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.login-area label {
+  float: right;
+}
+.login-area input {
+  width: 140px;
+  border: 1px solid grey;
+  background: #d9dfea;
+  padding: 2px;
+}
+.login-area button, button {
+  background-color: #538adc;
+  border-color: #538adc;
+  border-right: 2px solid #365596;
+  border-bottom: 2px solid #365596;
+  color: white;
+  padding: 2px 10px;
+  margin-top: 1px;
+}
+
+.search-area {
+  border: 1px solid #3b5998;
+  border-style: dashed;
+  margin: 0;
+  padding: 2px;
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.search-area input {
+  width: 120px;
+  margin-top: 5px;
+  border: 1px solid grey;
+  background: #d9dfea;
+  padding: 2px;
+}
+.search-area button, button {
+  background-color: #538adc;
+  border-color: #538adc;
+  border-right: 2px solid #365596;
+  border-bottom: 2px solid #365596;
+  color: white;
+  padding: 2px 10px;
+  margin-top: 1px;
+}
+.space {
+  margin: 2px;
+}
+.sidebar-links {
+  border: 1px solid #3b5998;
+  border-style: dashed;
+  margin: 0;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+.sidebar-links a {
+  text-decoration: none;
+  color: #337eff;
+  display: block;
+  text-align: left;
+}
+.sidebar-links a:hover {
+  text-decoration: underline;
+}
+
+.btn-link, .btn_link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* REVIEW: Footer */
+.footer-wrapper {
+  clear: both;
+}
+.footer-wrapper .links {
+  text-align: center;
+  padding-top: 20px;
+}
+.footer-wrapper .links ul {
+  margin: 0px;
+  padding: 0px;
+}
+.footer-wrapper .links li {
+  display: inline;
+  list-style-type: none;
+  margin: 0px 5px;
+}
+.footer-wrapper .links li a {
+  color: #337eff;
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-wrapper .links li a:hover {
+  text-decoration: underline;
+}
+.copyright {
+  text-align: center;
+}
+.copyright p {
+  margin: 0;
+  font-size: 14px;
+}
+/* REVIEW: END */

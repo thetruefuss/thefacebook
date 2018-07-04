@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/search_resuls.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Search Results</p>
+  </div>
+  <div class="mainbox-content-heading">
+    <h2>[ Search Results ]</h2>
+  </div>
+  <div class="mainbox-body">
+    <table style="border:0; margin:0px auto;">
+      {% for user in users %}
+      <tr>
+        <td><img src="{{ user.profile.get_picture }}" width="40px" height="40px"></td>
+        <td style="width:75%; padding-left:20px;">
+          <a href="{% url 'profile' %}?id={{ user.id }}">{{ user.name }}</a>
+        </td>
+        <td>[ <a href="#">Add Friend</a> ]</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+/* REVIEW: Main content */
+.mainbox {
+  /* REVIEW: total width is 718px */
+  width: 708px;
+  margin: 2px;
+  border: 1px solid #3b5998;
+  float: right;
+  font-size: 16px;
+  padding-bottom: 40px;
+}
+.mainbox-heading {
+  margin: 0;
+  padding: 2px;
+  background-color: #3b5998;
+  color: white;
+}
+.mainbox-heading p {
+  margin: 0;
+}
+.mainbox-content-heading {
+  text-align: center;
+}
+
+.minibox {
+  /* REVIEW: total width is 718px */
+  width: 600px;
+  margin: auto;
+  border: 1px solid #3b5998;
+  font-size: 16px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.minibox-heading {
+  margin: 0;
+  padding: 2px;
+  background-color: #3b5998;
+  color: white;
+}
+.minibox-heading p {
+  margin: 0;
+}
+.minibox-body {
+  padding: 0px;
+}
+.minibox-body p {
+  text-align: center;
+  margin: 20px 40px;
+}

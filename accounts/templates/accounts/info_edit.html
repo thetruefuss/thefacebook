@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/settings.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainbox">
+  <div class="mainbox-heading">
+    <p>Edit Profile</p>
+  </div>
+  <div class="mainbox-body">
+    <div class="leftside">
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>
+            Picture
+            {% if user == request.user %}
+              <a href="{% url 'edit_picture' %}" style="float:right;color:white;text-decoration:none;">[ edit ]</a>
+            {% endif %}
+          </p>
+        </div>
+        <div class="minibox-body">
+          <div class="profilepic">
+            <img src="{{ request.user.profile.get_picture }}" alt="Profile Picture" id="profilepic">
+          </div>
+        </div>
+      </div>
+      <div class="profile-links">
+        {% if user == request.user %}
+        <ul>
+          <li><a href="#">Visualize My Friends</a></li>
+          <li><a href="{% url 'edit_info' %}">Edit My Profile</a></li>
+          <li><a href="#">My Account Preferences</a></li>
+          <li><a href="#">My Privacy Preferences</a></li>
+        </ul>
+        {% else %}
+        <ul>
+          <li><a href="#">Add Friend</a></li>
+          <li><a href="#">Poke Now!</a></li>
+        </ul>
+        {% endif %}
+      </div>
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>Connection</p>
+        </div>
+        <div class="minibox-body">
+          <p>
+            {% if user == request.user %}
+            This is you.
+            {% else %}
+            Just another user on this network.
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      {% if user == request.user %}
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>Friends</p>
+        </div>
+        <div class="minibox-body">
+          <p>
+            You have {{ friends_count }} friends on Thefacebook.
+          </p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <form method="post" action="{% url 'edit_info' %}">{% csrf_token %}
+    <div class="rightside">
+      <div class="minibox">
+        <div class="minibox-heading">
+          <p>Information</p>
+        </div>
+        <div class="minibox-body">
+          <div class="info-heading"><b>Account Info:</b></div>
+          <div class="left-labels">
+            <span>Name:</span><br>
+            <span>Member Since:</span><br>
+            <span>Last Updated:</span><br>
+          </div>
+          <div class="right-assertions">
+            <span><input type="text" name="name" value="{{ user.get_full_name }}"></span><br>
+            <span>{% if user.member_since %}{{ user.member_since }}{% else %}.....................................{% endif %}</span><br>
+            <span>{% if profile.updated %}{{ profile.updated }}{% else %}.....................................{% endif %}</span><br>
+          </div>
+
+          <br>
+          <div class="info-heading"><b>Basic Info:</b></div>
+          <div class="left-labels">
+            <span>Email:</span><br>
+            <span>Status:</span><br>
+            <span>Sex:</span><br>
+            <span>Birthday:</span><br>
+            <span>Concentration:</span><br>
+            <span>Phone:</span><br>
+            <span>High School:</span><br>
+          </div>
+          <div class="right-assertions">
+            <span><input type="email" name="email" value="{{ user.email }}"></span><br>
+            <span>
+              <select name="status">
+                <option value="{{ user.status }}" selected></option>
+                <option value="student">Student</option>
+                <option value="alumnus">Alumnus/Alumna</option>
+                <option value="faculty">Faculty</option>
+                <option value="staff">Staff</option>
+              </select>
+            </span><br>
+            <span>
+              <select name="sex">
+                <option value="{{ user.profile.sex }}" selected></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </span><br>
+            <span><input type="text" name="dob" value="{{ user.profile.dob }}"></span><br>
+            <span><input type="text" name="concentration" value="{{ user.profile.concentration }}"></span><br>
+            <span><input type="text" name="phone_number" value="{{ user.profile.phone_number }}"></span><br>
+            <span><input type="text" name="high_school" value="{{ user.profile.high_school }}"></span><br>
+          </div>
+
+          <br>
+          <div class="info-heading"><b>Extented Info:</b></div>
+          <div class="left-labels">
+            <span>Screen Name:</span><br>
+            <span>Political Views:</span><br>
+            <span>Interest:</span><br>
+            <span>Relationship Status:</span><br>
+          </div>
+          <div class="right-assertions">
+            <span><input type="text" name="screen_name" value="{{ user.profile.screen_name }}"></span><br>
+            <span><input type="text" name="political_views" value="{{ user.profile.political_views }}"></span><br>
+            <span><input type="text" name="interests" value="{{ user.profile.interests }}"></span><br>
+            <span>
+              <select name="relationship_status">
+                <option value="{{ user.profile.relationship_status }}" selected></option>
+                <option value="single">Single</option>
+                <option value="relationship">In a Relationship</option>
+                <option value="engaged">Engaged</option>
+                <option value="married">Married</option>
+                <option value="complicated">It's Complicated</option>
+              </select>
+            </span><br>
+          </div>
+        </div>
+        <div class="hba"><button type="submit">Update Now!</button></div>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+{% endblock %}
